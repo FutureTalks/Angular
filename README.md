@@ -26,7 +26,8 @@ If you correctly installed angular-cli-ghpages you should now be able to publish
 
 
 
-##Additional information
+
+## Additional information
 
 ### Code scaffolding
 
