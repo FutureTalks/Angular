@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DogService } from '../services/dog.service';
 
 @Component({
   selector: 'app-projects',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+    source: string;
 
-  ngOnInit() {
+  constructor(private dogService: DogService) { }
+
+  async ngOnInit() {
+      this.source = await this.dogService.get();
+  }
+
+  async getDog(){
+    this.source = await this.dogService.get();
   }
 
 }
