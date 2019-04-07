@@ -10,6 +10,7 @@ import { FirebaseService } from '../services/firebase.service';
 export class AboutComponent implements OnInit {
 
   content: Content;
+  panelOpenState: boolean;
   
   constructor(private firebase: FirebaseService) {
     this.firebase.getContent('About').subscribe(items => this.content = items[0]);

@@ -15,10 +15,11 @@ Install Firebase Tools globally using `npm install -g firebase-tools`. After ins
 
 Get your App config from Firebase and paste it in `src/environments/environment.ts` and `src/environments/environment.prod.ts`.
 
-And you're done! Use `npm run deploy` to build the project and deploy it to firebase.
+NEVER commit your api keys in the config! Run `git update-index --assume-unchanged src/environments/environment.ts` and `git update-index --assume-unchanged src/environments/environment.prod.ts` to avoid committing your keys.
 
-Great tutorial if you want to set up your own page on Firebase: https://scotch.io/tutorials/deploying-an-angular-cli-app-to-production-with-firebase 
+And you're done! Start coding and use `npm run deploy` to build the project and deploy it to firebase.
 
+Great tutorial if you want to set up your own page on Firebase from scratch: https://scotch.io/tutorials/deploying-an-angular-cli-app-to-production-with-firebase 
 
 
 ## For GitHub Pages publish run
