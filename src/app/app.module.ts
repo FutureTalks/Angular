@@ -16,6 +16,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     HomeComponent,
     AboutComponent,
     ProjectsComponent,
-    NavigationComponent
+    NavigationComponent,
+    LoginPageComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
