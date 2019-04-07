@@ -1,7 +1,7 @@
 <div class="boxContainer">
     <a routerLink="../about" routerLinkActive="active"> 
         <div class="box">
-            <img class="boxImage" src="../../assets/icons/info.svg" />
+            <img class="boxImage" src="./assets/icons/info.svg" />
             <div class="boxTitle">About</div>
             <br />
             Learn more about the Future Talks, our philosophy and what we do.
@@ -10,7 +10,7 @@
 
     <a target="_blank" href="https://goo.gl/forms/DMG7YCx1T8ZXZzwt1"> 
         <div class="box">
-            <img class="boxImage" src="../../assets/icons/organization.svg" />
+            <img class="boxImage" src="./assets/icons/organization.svg" />
             <div class="boxTitle">Become a member</div>
             <br />
             Currently, we only target members and invitees to come to our meetings, but we plan to expand.<br /><br />
@@ -20,7 +20,7 @@
 
     <a routerLink="../projects" routerLinkActive="active"> 
         <div class="box">
-                <img class="boxImage" src="../../assets/icons/beaker.svg" />
+                <img class="boxImage" src="./assets/icons/beaker.svg" />
             <div class="boxTitle">Projects</div>
             <br />
             Information about our projects, our goals and progress.
@@ -29,7 +29,7 @@
 
     <a target="_blank" href="https://github.com/FutureTalks"> 
         <div class="box">
-            <img class="boxImage" src="../../assets/icons/mark-github.svg" />
+            <img class="boxImage" src="./assets/icons/mark-github.svg" />
             <div class="boxTitle">GitHub</div>
             <br />
             You can also find us on GitHub, feel free to collaborate in our projects.
@@ -37,8 +37,4 @@
     </a>
 </div>
 
-
-<p>
-Imagine a world, where artificial intelligence (AI) is used on a daily base, quantum computers perform calculations at incredible speeds and every human or device can be connected to exchange information.<br /> That world exists today. <br />Technology is ubiquitous but still many people remain unconscious about topics well worth exploring. Haven't you ever wondered how a machine can learn on its own? How everybody can agree on a thing that anybody can change ("Distributed Ledgers")? What can be achieved in different realities?<br /><br />
-Nobody knows everything, but everybody knows something! Even you have knowledge about some interesting topics that others never got to explore that much or in that way. We think it's worth to share that knowledge with others and benefit from personal experiences with technology.<br />
-</p>
+<p [innerHtml]="content?.text"></p>

@@ -1,6 +1,4 @@
-# Futuretalks
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+# Futuretalks Angular Page
 
 ## Setup
 
@@ -10,9 +8,17 @@ To install dependencies, run `npm install`. After folder node_modules is created
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Firebase deploy
+
+Install Firebase Tools globally using `npm install -g firebase-tools`. After installing, run `firebase login` to login to firebase.
+
+Get your App config from Firebase and paste it in `src/environments/environment.ts` and `src/environments/environment.prod.ts`.
+
+And you're done! Use `npm run deploy` to build the project and deploy it to firebase.
+
+Great tutorial if you want to set up your own page on Firebase: https://scotch.io/tutorials/deploying-an-angular-cli-app-to-production-with-firebase 
+
 
 
 ## For GitHub Pages publish run
