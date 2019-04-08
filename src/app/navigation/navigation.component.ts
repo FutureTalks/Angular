@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AfService } from '../services/af.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-navigation',
@@ -18,7 +18,7 @@ export class NavigationComponent {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private afAuth: AfService) {
+  constructor(private breakpointObserver: BreakpointObserver, private afAuth: AuthService) {
     this.afAuth.getAuthState().subscribe(userInfo => this.authInfo = userInfo);
   }
 

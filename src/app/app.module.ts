@@ -18,6 +18,10 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { PrivateComponent } from './private/private.component';
+
+import { AuthService } from './services/auth.service';
+import { AuthGuard} from './guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
     AboutComponent,
     ProjectsComponent,
     NavigationComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    PrivateComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -44,7 +49,10 @@ import { LoginPageComponent } from './login-page/login-page.component';
     MatListModule,
     MatExpansionModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard, 
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

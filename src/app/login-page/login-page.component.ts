@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AfService } from '../services/af.service';
+import { AuthService } from '../services/auth.service';
 import * as firebase from 'firebase/app';
 
 
@@ -12,7 +12,7 @@ export class LoginPageComponent implements OnInit {
 
   user: firebase.User;
 
-  constructor(private afAuth: AfService) { }
+  constructor(private afAuth: AuthService) { }
 
   ngOnInit() {
     this.getUserInfo();
@@ -23,7 +23,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   doGoogleLogout(){
-    this.afAuth.doGoogleLogout().then(() => this.getUserInfo());
+    this.afAuth.doLogout().then(() => this.getUserInfo());
   }
 
   getUserInfo(){
