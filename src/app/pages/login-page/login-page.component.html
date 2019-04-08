@@ -1,0 +1,6 @@
+<div class ="contentBox">
+  {{user?.displayName}}<br />
+  <app-gbutton *ngIf="!user" (click)="doGoogleLogin()" text="Sign in with Google"></app-gbutton>
+  <app-gbutton *ngIf="user" (click)="doGoogleLogout()" text="Sign out of Google"></app-gbutton>
+</div>
+

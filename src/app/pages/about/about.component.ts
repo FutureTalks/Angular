@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Content } from '../models/Content';
-import { FirebaseService } from '../services/firebase.service';
+import { Content } from '../../models/Content';
+import { FirebaseService } from '../../services/firebase.service';
 
 @Component({
   selector: 'app-about',
