@@ -19,16 +19,7 @@ NEVER commit your api keys in the config! Run `git update-index --assume-unchang
 
 And you're done! Start coding and use `npm run deploy` to build the project and deploy it to firebase.
 
-Great tutorial if you want to set up your own page on Firebase from scratch: https://scotch.io/tutorials/deploying-an-angular-cli-app-to-production-with-firebase 
-
-
-## For GitHub Pages publish run
-
-To publish to GitHub Pages (https://futuretalks.github.io/Angular/), install angular-cli-ghpages globally: `npm install -g angular-cli-ghpages`
-
-To build the page run `ng build --prod --base-href "https://futuretalks.github.io/Angular/"`
-
-If you correctly installed angular-cli-ghpages you should now be able to publish the page using the command `ngh --message="Awesome Commitmessage"`. The files will be added to the 'gh-pages' branch of the project.
+Great tutorial if you want to set up your own Angular page on Firebase from scratch: https://scotch.io/tutorials/deploying-an-angular-cli-app-to-production-with-firebase 
 
 
 
