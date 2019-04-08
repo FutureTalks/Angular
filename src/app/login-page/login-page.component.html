@@ -1,0 +1,7 @@
+
+    
+<div class ="contentBox">
+  {{user?.displayName}}
+  <button *ngIf="!user" (click)="doGoogleLogin()">Google Login</button>
+  <button *ngIf="user" (click)="doGoogleLogout()">Logout</button>
+</div>
