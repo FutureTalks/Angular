@@ -13,9 +13,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Install Firebase Tools globally using `npm install -g firebase-tools`. After installing, run `firebase login` to login to firebase.
 
+NEVER COMMIT ANY KEYS OR PERSONAL INFORMATION!
+
 Get your App config from Firebase and paste it in `src/environments/environment.ts` and `src/environments/environment.prod.ts`.
 
-NEVER commit your api keys in the config! Run `git update-index --assume-unchanged src/environments/environment.ts` and `git update-index --assume-unchanged src/environments/environment.prod.ts` to avoid committing your keys.
+NEVER COMMIT ANY KEYS OR PERSONAL INFORMATION!
+
+Run `git update-index --assume-unchanged src/environments/*` to avoid committing your keys.
 
 And you're done! Start coding and use `npm run deploy` to build the project and deploy it to firebase.
 
