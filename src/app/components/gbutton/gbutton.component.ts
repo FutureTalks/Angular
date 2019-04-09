@@ -1,4 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gbutton',
@@ -7,10 +9,21 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class GbuttonComponent implements OnInit {
 
-  @Input() text: string;
+  user: firebase.User;
 
-  constructor() { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.auth.getAuthState().subscribe(userInfo => {
+      this.user = userInfo;
+    });
+  }
+
+  doGoogleLogin(){
+    this.auth.doGoogleLogin().then(() => this.router.navigate(['/private']));
+  }
+
+  doGoogleLogout(){
+    this.auth.doLogout().then(() => this.router.navigate(['/login']));
   }
 }

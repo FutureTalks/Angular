@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Content } from "../models/Content";
+import { UserRight } from '../models/UserRight';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +17,9 @@ export class FirebaseService {
   
   getContent(page){
     return this.get<Content>('contents', ref => ref.where('title', '==', page));
+  }
+  
+  getUserRights(email){
+    return this.get<UserRight>('users', ref => ref.where('email', '==', email));
   }
 }

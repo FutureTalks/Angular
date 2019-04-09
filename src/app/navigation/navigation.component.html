@@ -23,8 +23,8 @@
         <a mat-list-item class="menuItem" routerLink="home" routerLinkActive="active">Home</a>
         <a mat-list-item class="menuItem" routerLink="about" routerLinkActive="active">About</a>
         <a mat-list-item class="menuItem" routerLink="projects" routerLinkActive="active">Projects</a>
-        <a mat-list-item class="menuItem" routerLink="login" routerLinkActive="active">Members</a>
-        <a mat-list-item class="menuItem" routerLink="private" routerLinkActive="active" *ngIf="authInfo">Private Page</a>
+        <a mat-list-item class="menuItem" routerLink="login" routerLinkActive="active" *ngIf="!authInfo">Login</a>
+        <a mat-list-item class="menuItem" routerLink="private" routerLinkActive="active" *ngIf="authInfo">Member Access</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

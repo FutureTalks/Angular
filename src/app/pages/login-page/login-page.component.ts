@@ -19,13 +19,4 @@ export class LoginPageComponent implements OnInit {
       this.user = userInfo;
     });
   }
-
-  doGoogleLogin(){
-    this.afAuth.doGoogleLogin();
-  }
-
-  doGoogleLogout(){
-    this.afAuth.doLogout();
-  }
-
 }

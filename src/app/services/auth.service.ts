@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth'
 import * as firebase from 'firebase/app';
+import { Rights } from '../enum/Rights';
+import { FirebaseService } from './firebase.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   
-  authInfo: firebase.User;
+  user: firebase.User;
 
-  constructor(private afAuth: AngularFireAuth) {
-    this.afAuth.authState.subscribe(userInfo => this.authInfo = userInfo);
+  constructor(private auth: AngularFireAuth, firebase: FirebaseService) {
+    this.auth.authState.subscribe(userInfo => {
+      this.user = userInfo;
+    });
   }
   
   doGoogleLogin(){
@@ -18,7 +22,7 @@ export class AuthService {
       let provider = new firebase.auth.GoogleAuthProvider();
       provider.addScope('profile');
       provider.addScope('email');
-      this.afAuth.auth
+      this.auth.auth
       .signInWithPopup(provider)
       .then(res => {
         resolve(res);
@@ -28,7 +32,7 @@ export class AuthService {
   
   doLogout(){
     return new Promise<any>((resolve, reject) => {
-      this.afAuth.auth
+      this.auth.auth
       .signOut()
       .then(res => {
         resolve(res);
@@ -37,11 +41,11 @@ export class AuthService {
   }
 
   getAuthState(){
-    return this.afAuth.authState;
+    return this.auth.authState;
   }
 
   getUser(){
-    return this.authInfo;
+    return this.user;
   }
 
 }
