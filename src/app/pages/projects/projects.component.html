@@ -1,4 +1,22 @@
+<h3>Talks</h3>
+<mat-accordion>
+<mat-expansion-panel *ngFor="let t of talks">
+    <mat-expansion-panel-header>
+    <mat-panel-title>
+        <b>{{t?.title}}</b>
+    </mat-panel-title>
+    <mat-panel-description>
+        {{t?.info}}
+    </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p [innerHtml]="t?.text"> </p>
+</mat-expansion-panel>
+</mat-accordion>
+
+<br />
+
+<h3>Demos</h3>
 <div class ="contentBox">
-    Random Dog API calls to demonstrate services:<br />
+    <p [innerHtml]="content?.text"></p>
     <img class="dog" [src]="source" (click)="getDog()"/>
 </div>

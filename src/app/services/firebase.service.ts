@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Content } from "../models/Content";
 import { UserRight } from '../models/UserRight';
+import { Accordion } from '../models/Accordion';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,9 @@ export class FirebaseService {
   
   getUserRights(email){
     return this.get<UserRight>('users', ref => ref.where('email', '==', email));
+  }
+  
+  getAccordion(topic){
+    return this.get<Accordion>(topic, ref => ref);
   }
 }

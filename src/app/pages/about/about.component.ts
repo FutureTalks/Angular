@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../../models/Content';
 import { FirebaseService } from '../../services/firebase.service';
+import { Accordion } from 'src/app/models/Accordion';
 
 @Component({
   selector: 'app-about',
@@ -9,12 +10,10 @@ import { FirebaseService } from '../../services/firebase.service';
 })
 export class AboutComponent implements OnInit {
 
-  content: Content;
-  statutes: Content;
+  abouts: Accordion[];
   
   constructor(private firebase: FirebaseService) {
-    this.firebase.getContent('About').subscribe(items => this.content = items[0]);
-    this.firebase.getContent('Statutes').subscribe(items => this.statutes = items[0]);
+    this.firebase.getAccordion('about').subscribe(items => this.abouts = items.sort((a, b) => a.order - b.order));
   }
 
   ngOnInit() {

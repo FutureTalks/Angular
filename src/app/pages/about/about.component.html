@@ -1,22 +1,13 @@
-
 <mat-accordion>
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                <b>Future Talks</b>
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p [innerHtml]="content?.text"> </p>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <b>Future Talks statutes </b>
-        </mat-panel-title>
-        <mat-panel-description>
-          German
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <p [innerHtml]="statutes?.text"> </p>
-    </mat-expansion-panel>
-  </mat-accordion>
+  <mat-expansion-panel *ngFor="let a of abouts">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <b>{{a?.title}}</b>
+      </mat-panel-title>
+      <mat-panel-description>
+        {{a?.info}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p [innerHtml]="a?.text"> </p>
+  </mat-expansion-panel>
+</mat-accordion>
