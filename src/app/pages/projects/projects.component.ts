@@ -16,7 +16,7 @@ export class ProjectsComponent implements OnInit {
   talks: Accordion[];
   
   constructor(private dogService: DogService, private firebase: FirebaseService){
-    this.firebase.getAccordion('talks').subscribe(items => this.talks = items.sort((a, b) => a.order - b.order));
+    this.firebase.getAccordion('talks').subscribe(items => this.talks = items.sort((a, b) => b.order - a.order));
   }
 
   async ngOnInit(){

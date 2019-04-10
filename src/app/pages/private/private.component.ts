@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { Content } from '../../models/Content';
 import { AuthService } from 'src/app/services/auth.service';
-import { Rights } from 'src/app/enum/Rights';
+import { Rights } from 'src/app/models/enum/Rights';
 
 @Component({
   selector: 'app-private',

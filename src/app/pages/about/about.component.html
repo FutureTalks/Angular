@@ -13,3 +13,19 @@
     <p [innerHtml]="a?.text"> </p>
   </mat-expansion-panel>
 </mat-accordion>
+
+<h3>FAQ</h3>
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let q of faqs">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <b>{{q?.title}}</b>
+      </mat-panel-title>
+      <mat-panel-description>
+        {{q?.info}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p [innerHtml]="q?.text"> </p>
+  </mat-expansion-panel>
+</mat-accordion>

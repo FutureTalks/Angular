@@ -1,8 +1,20 @@
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
+    match /contents/{document=**} {
       allow read;
-      allow write: if request.auth.uid != null;
+    }
+    match /about/{document=**} {
+      allow read;
+    }
+    match /talks/{document=**} {
+      allow read;
+    }
+    match /faq/{document=**} {
+      allow read;
+    }  
+    match /{document=**} {
+      allow read: if request.auth.uid != null;
+      allow write: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.rights >= 2;
     }
   }
 }
