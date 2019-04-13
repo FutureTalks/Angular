@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DogService } from '../../services/dog.service';
+import { DogService } from 'src/app//services/content/dog.service';
 import { Content } from 'src/app/models/Content';
-import { FirebaseService } from 'src/app/services/firebase.service';
 import { Accordion } from 'src/app/models/Accordion';
+import { ContentService } from 'src/app/services/content/content.service';
 
 @Component({
   selector: 'app-projects',
@@ -15,7 +15,7 @@ export class ProjectsComponent implements OnInit {
   source: string;
   talks: Accordion[];
   
-  constructor(private dogService: DogService, private firebase: FirebaseService){
+  constructor(private dogService: DogService, private firebase: ContentService){
     this.firebase.getAccordion('talks').subscribe(items => this.talks = items.sort((a, b) => b.order - a.order));
   }
 

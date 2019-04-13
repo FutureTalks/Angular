@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { Content } from "../../models/Content";
-import { FirebaseService } from '../../services/firebase.service';
+import { ContentService } from 'src/app/services/content/content.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   content: Content;
   
-  constructor(private firebase: FirebaseService) {
+  constructor(private firebase: ContentService) {
     this.firebase.getContent('Home').subscribe(items => this.content = items[0]);
   }
 

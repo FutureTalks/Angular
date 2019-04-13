@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from '../../services/firebase.service';
-import { Content } from '../../models/Content';
+import { Content } from 'src/app//models/Content';
 import { AuthService } from 'src/app/services/auth.service';
 import { Rights } from 'src/app/models/enum/Rights';
+import { ContentService } from 'src/app/services/content/content.service';
 
 @Component({
   selector: 'app-private',
@@ -15,7 +15,7 @@ export class PrivateComponent implements OnInit {
   user: firebase.User;
   content: Content;
   
-  constructor(private auth: AuthService, private firebase: FirebaseService) {
+  constructor(private auth: AuthService, private firebase: ContentService) {
     this.firebase.getContent('Private').subscribe(items => this.content = items[0]);
     this.auth.getAuthState().subscribe(userInfo => {
       this.user = userInfo;

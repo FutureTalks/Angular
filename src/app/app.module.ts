@@ -24,6 +24,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { AuthService } from './services/auth.service';
 import { AuthGuard} from './guard/auth.guard';
 import { GbuttonComponent } from './components/gbutton/gbutton.component';
+import { ManagerPanelComponent } from './pages/manager-panel/manager-panel.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { GbuttonComponent } from './components/gbutton/gbutton.component';
     NavigationComponent,
     LoginPageComponent,
     PrivateComponent,
-    GbuttonComponent
+    GbuttonComponent,
+    ManagerPanelComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
