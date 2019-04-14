@@ -1,3 +1,15 @@
-<p>
-  manager-panel works!
-</p>
+
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let u of users">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <b>{{u?.email}}</b>
+        </mat-panel-title>
+        <mat-panel-description>
+          {{u?.id}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p> {{u?.rights}} </p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth'
 import * as firebase from 'firebase/app';
-import { FirebaseService } from './content/firebase.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +9,7 @@ export class AuthService {
   
   user: firebase.User;
 
-  constructor(private auth: AngularFireAuth, firebase: FirebaseService) {
+  constructor(private auth: AngularFireAuth) {
     this.auth.authState.subscribe(userInfo => {
       this.user = userInfo;
     });
@@ -46,5 +45,4 @@ export class AuthService {
   getUser(){
     return this.user;
   }
-
 }

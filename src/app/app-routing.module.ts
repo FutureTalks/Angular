@@ -7,6 +7,7 @@ import { ProjectsComponent } from './pages/projects/projects.component'
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { PrivateComponent } from './pages/private/private.component';
 import { AuthGuard } from './guard/auth.guard';
+import { ManagerPanelComponent } from './pages/manager-panel/manager-panel.component';
 
 const routes: Routes = [
     {path:'', pathMatch:'prefix', redirectTo: 'home'},
@@ -15,6 +16,7 @@ const routes: Routes = [
     {path:'projects', component: ProjectsComponent},
     {path:'login', component: LoginPageComponent},
     {path:'private', component: PrivateComponent, canActivate: [AuthGuard]},
+    {path:'manager', component: ManagerPanelComponent, canActivate: [AuthGuard]},
     {path:'*', redirectTo: 'home'},
 ];
 

@@ -14,6 +14,9 @@ export class FirebaseService {
   getDoc(collection, ref){
     return this.db.collection(collection, ref).doc;
   }
+  getDocPath<T>(path){
+    return this.db.doc<T>(path).valueChanges();
+  }
   update<T>(itemDoc:AngularFirestoreDocument<T>, item:T){
     return itemDoc.update(item);
   }
