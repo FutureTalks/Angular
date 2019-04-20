@@ -1,14 +1,13 @@
 .boxContainer{
     display: flex;
-    padding: 15px;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
+    margin-bottom: 15px;
 }
 
 .boxGroup{
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
 }
 
 a {
@@ -17,12 +16,14 @@ a {
 }
 
 .box{
+    white-space: nowrap;
     color: black;
     display: flex;
     padding: 15px;
     width: 150px;
     height: 75px;
     border-radius: 4px;
+    flex: 1 1 calc(28% - 2px);
     flex-direction: column;
     align-items: center;
     box-shadow:     0px 3px 1px -2px rgba(0, 0, 0, 0.2), 
