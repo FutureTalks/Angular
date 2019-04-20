@@ -1,4 +1,5 @@
 <div class ="contentBox">
+    <p *ngIf="user">Welcome, {{user?.displayName}}. You are logged in.<br /></p>
   <p [innerHtml]="content?.text"></p>
   <app-gbutton></app-gbutton><br />
   <div *ngIf="rights>0">

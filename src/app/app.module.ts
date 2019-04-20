@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { PrivateComponent } from './pages/private/private.component';
 
 import { AngularFireModule } from '@angular/fire';
@@ -16,7 +15,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -32,8 +30,6 @@ import { ManagerPanelComponent } from './pages/manager-panel/manager-panel.compo
     HomeComponent,
     AboutComponent,
     ProjectsComponent,
-    NavigationComponent,
-    LoginPageComponent,
     PrivateComponent,
     GbuttonComponent,
     ManagerPanelComponent

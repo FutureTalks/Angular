@@ -12,20 +12,20 @@ import { ContentService } from 'src/app/services/content/content.service';
 export class ProjectsComponent implements OnInit {
 
   content: Content;
-  source: string;
+  source="";
   talks: Accordion[];
   
   constructor(private dogService: DogService, private firebase: ContentService){
     this.firebase.getAccordion('talks').subscribe(items => this.talks = items.sort((a, b) => b.order - a.order));
+    this.firebase.getContent('Projects').subscribe(items => this.content = items[0]);
+    this.getDog();
   }
 
-  async ngOnInit(){
-    this.firebase.getContent('Projects').subscribe(items => this.content = items[0]);
-    this.source = await this.dogService.get();
+  ngOnInit(){
   }
 
   async getDog(){
-    this.source = await this.dogService.get();
+    this.dogService.get().subscribe(resp => this.source=resp.message);
   }
 
 }

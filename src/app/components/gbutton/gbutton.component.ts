@@ -24,6 +24,6 @@ export class GbuttonComponent implements OnInit {
   }
 
   doGoogleLogout(){
-    this.auth.doLogout().then(() => this.router.navigate(['/login']));
+    this.auth.doLogout().then(() => this.router.navigate(['/private']));
   }
 }
