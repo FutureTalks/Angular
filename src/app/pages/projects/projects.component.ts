@@ -24,7 +24,7 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(){
   }
 
-  async getDog(){
+  getDog(){
     this.dogService.get().subscribe(resp => this.source=resp.message);
   }
 

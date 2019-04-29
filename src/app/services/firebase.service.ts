@@ -8,6 +8,9 @@ export class FirebaseService {
 
   constructor(private db: AngularFirestore) {}
 
+  add<T>(collection, values){
+    return this.db.collection<T>(collection).add(values);
+  }
   get<T>(collection, ref){
     return this.db.collection<T>(collection, ref).valueChanges();
   }
