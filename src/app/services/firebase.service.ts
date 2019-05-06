@@ -11,6 +11,9 @@ export class FirebaseService {
   add<T>(collection, values){
     return this.db.collection<T>(collection).add(values);
   }
+  addId<T>(collection, values, id){
+    return this.db.doc<T>(collection+'/'+id).set(values);
+  }
   get<T>(collection, ref){
     return this.db.collection<T>(collection, ref).valueChanges();
   }

@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Rights } from 'src/app/models/enum/Rights';
 import { ContentService } from 'src/app/services/content/content.service';
 import { UserService } from 'src/app/services/user/user.service';
+import { UserRight } from 'src/app/models/UserRight';
 
 @Component({
   selector: 'app-private',
@@ -26,7 +27,13 @@ export class PrivateComponent implements OnInit {
             this.rights = userRights.rights;
           }
           else {
-            this.rights = Rights.User;
+              let tempUser: UserRight = {
+                email: this.user.email,
+                rights: Rights.None,
+                userId: this.user.uid
+              }
+            userService.putUser(tempUser, this.user.uid)
+            this.rights = Rights.None;
           }
         });
       }

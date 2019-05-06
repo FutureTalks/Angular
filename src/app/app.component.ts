@@ -27,9 +27,9 @@ export class AppComponent {
   constructor(private breakpointObserver: BreakpointObserver, afAuth: AuthService, contentService: ContentService, userService: UserService) {
     afAuth.getAuthState().subscribe(userInfo => this.authInfo = userInfo);
 
-    this.userRights = Rights.User;
+    this.userRights = Rights.None;
     let obs = (user: firebase.User) => {
-      var o = of(Rights.User);
+      var o = of(Rights.None);
       if (user){
         return userService.getUserRights(user.uid).pipe(map(u => {
           if(u){ 

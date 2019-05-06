@@ -9,7 +9,11 @@
           {{u?.id}}
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p> {{u?.rights}} </p>
+      <b>Role:</b><br />
+      <div *ngIf="u.rights==0">None</div>
+      <div *ngIf="u.rights==1">Member</div>
+      <div *ngIf="u.rights==2">Board Member</div>
+      <div *ngIf="u.rights==3">Admin</div>
     </mat-expansion-panel>
   </mat-accordion>
   

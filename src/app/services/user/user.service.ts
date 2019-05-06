@@ -18,5 +18,9 @@ export class UserService {
   getAllUser(){
     return this.firebase.get<UserRight>('users', ref => ref);
   }
+  
+  putUser(user: UserRight, id){
+    return this.firebase.addId<UserRight>('users', user, id)
+  }
 
 }
