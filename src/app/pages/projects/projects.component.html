@@ -16,7 +16,7 @@
 <br />
 
 <h3>Demos</h3>
-<div class ="contentBox">
+<div *ngIf="!(isHandset$ | async)" class ="contentBox">
     Watch an evolutionary algorithm learning to play flappybird:
     <iframe style="width: 615px; height: 525px" src="https://futuretalks.github.io/flappybird/"></iframe>
 </div>
