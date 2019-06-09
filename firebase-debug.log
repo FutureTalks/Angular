@@ -1,0 +1,63 @@
+[debug] [2019-06-09T23:15:31.589Z] ----------------------------------------------------------------------
+[debug] [2019-06-09T23:15:31.591Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sebi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-06-09T23:15:31.591Z] CLI Version:   6.5.3
+[debug] [2019-06-09T23:15:31.592Z] Platform:      win32
+[debug] [2019-06-09T23:15:31.592Z] Node Version:  v10.15.0
+[debug] [2019-06-09T23:15:31.593Z] Time:          Mon Jun 10 2019 01:15:31 GMT+0200 (Central European Summer Time)
+[debug] [2019-06-09T23:15:31.593Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-06-09T23:15:31.613Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-06-09T23:15:31.614Z] > authorizing via signed-in user
+[debug] [2019-06-09T23:15:31.614Z] [iam] checking project futuretalks-debdc for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2019-06-09T23:15:31.616Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-06-09T23:15:31.616Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-06-09T23:15:31.810Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-09T23:15:31.820Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/futuretalks-debdc:testIamPermissions  
+
+[debug] [2019-06-09T23:15:32.725Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-09T23:15:32.727Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/futuretalks-debdc  
+ 
+[debug] [2019-06-09T23:15:33.006Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'futuretalks-debdc'...
+[info] 
+[info] i  deploying database, firestore, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-06-09T23:15:33.013Z] >>> HTTP REQUEST PUT https://futuretalks-debdc.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2019-06-09T23:15:33.972Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database futuretalks-debdc is valid
+[info] i  firestore: checking firestore.rules for compilation errors...
+[info] i  firestore: reading indexes from firestore.indexes.json...
+[debug] [2019-06-09T23:15:33.979Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/futuretalks-debdc:test  
+
+[debug] [2019-06-09T23:15:34.782Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2019-06-09T23:15:34.784Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/futuretalks-debdc/versions  
+
+[debug] [2019-06-09T23:15:36.493Z] <<< HTTP RESPONSE 200
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2019-06-09T23:15:36.496Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/futuretalks-debdc/rulesets  
+
+[debug] [2019-06-09T23:15:36.496Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/futuretalks-debdc/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2019-06-09T23:15:36.845Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-09T23:15:36.845Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/futuretalks-debdc/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2019-06-09T23:15:37.003Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-09T23:15:37.004Z] [rules] created ruleset projects/futuretalks-debdc/rulesets/55813ad8-2f14-471d-8918-1ebde0e1a6f1
+[debug] [2019-06-09T23:15:37.578Z] <<< HTTP RESPONSE 200
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully
+[info] i  hosting[futuretalks-debdc]: beginning deploy...
+[info] i  hosting[futuretalks-debdc]: found 193 files in dist
+[debug] [2019-06-09T23:15:37.720Z] [hosting] hash cache [ZGlzdA] load error: lines is not defined
+[debug] [2019-06-09T23:15:38.325Z] [hosting] hash cache [ZGlzdA] stored for 193 files
+[debug] [2019-06-09T23:15:38.326Z] [hosting][hash queue][FINAL]
+[debug] [2019-06-09T23:15:38.326Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/futuretalks-debdc/versions/cf2480e319782ad0:populateFiles  
+ <request body omitted>

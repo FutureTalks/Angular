@@ -23,6 +23,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard} from './guard/auth.guard';
 import { GbuttonComponent } from './components/gbutton/gbutton.component';
 import { ManagerPanelComponent } from './pages/manager-panel/manager-panel.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ManagerPanelComponent } from './pages/manager-panel/manager-panel.compo
     ProjectsComponent,
     PrivateComponent,
     GbuttonComponent,
-    ManagerPanelComponent
+    ManagerPanelComponent,
+    NavigationComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

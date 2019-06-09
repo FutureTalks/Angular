@@ -1,13 +1,17 @@
 <div class ="contentBox">
     <p *ngIf="user">Welcome, {{user?.displayName}}. You are logged in.<br /></p>
   <p [innerHtml]="content?.text"></p>
-
-  <app-gbutton></app-gbutton><br />
-  
   <div *ngIf="rights>0">
     Your rights are <b *ngIf="rights==3">Admin</b> <b *ngIf="rights==2">Board Member</b> <b *ngIf="rights==1">Member</b> 
   </div>
   <div *ngIf="rights==0">
     No rights assigned
+  </div>
+  <br />
+
+  <app-gbutton></app-gbutton><br />
+  
+  <div *ngIf="rights>1">
+    <a routerLink="/manager">Manage Users</a>
   </div>
 </div>

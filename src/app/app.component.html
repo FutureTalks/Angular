@@ -5,18 +5,19 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+       <!--<mat-icon aria-label="Side nav toggle icon">menu</mat-icon> --> 
       </button>
       <div class="clubTitle">
-        <span class="clubTitleText">Future Talks</span>
+        <span class="clubTitleText"><a routerLink="home">Future Talks</a></span>
       </div>
     </mat-toolbar>
+    <app-navigation></app-navigation>
   
     <mat-sidenav-container class="sidenav-container">
       <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
           [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
           [mode]="(isHandset$ | async) ? 'over' : 'side'"
-          [opened]="!(isHandset$ | async)"
+          [opened]="false"
           fixedTopGap="75">
         <mat-toolbar>Menu</mat-toolbar>
         <mat-nav-list>

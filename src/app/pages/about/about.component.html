@@ -1,3 +1,21 @@
+<div class="boxContainer">
+  <a class="box" target="_blank" rel="noopener" href="https://goo.gl/forms/DMG7YCx1T8ZXZzwt1" *ngIf="!(isHandset$ | async)"> 
+    <img class="boxImage" alt="Members" src="./assets/icons/organization.svg" />
+    <div class="boxTitle">Become member</div>
+    <br />
+  </a>
+  <a class="box" target="_blank" href="mailto:info@futuretalks.dev" *ngIf="!(isHandset$ | async)">
+    <img class="boxImage" alt="Contact" src="./assets/icons/mention.svg" />
+    <div class="boxTitle">Contact us</div>
+    <br />
+  </a>
+  <a class="box" target="_blank" rel="noopener" href="https://github.com/FutureTalks" *ngIf="!(isHandset$ | async)">
+    <img class="boxImage" alt="Github" src="./assets/icons/mark-github.svg" />
+    <div class="boxTitle">GitHub</div>
+    <br />
+  </a>
+</div>
+
 <h3>About</h3>
 
 <mat-accordion>
