@@ -26,10 +26,14 @@ export class ProjectsComponent implements OnInit {
   constructor(private breakpointObserver: BreakpointObserver, private dogService: DogService, private firebase: ContentService){
     this.firebase.getAccordion('talks').subscribe(items => this.talks = items.sort((a, b) => b.order - a.order));
     this.firebase.getContent('Projects').subscribe(items => this.content = items[0]);
-    this.dogService.get().subscribe(resp => this.source=resp.message);
+    this.getDog();
   }
 
   ngOnInit(){ 
+  }
+
+  getDog(){
+    this.dogService.get().subscribe(resp => this.source=resp.message);
   }
 
 }
