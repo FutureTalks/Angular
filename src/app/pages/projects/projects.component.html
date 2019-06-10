@@ -3,7 +3,8 @@
 <mat-expansion-panel *ngFor="let t of talks">
     <mat-expansion-panel-header>
     <mat-panel-title>
-        <b class="talkTitle">{{t?.title}}</b>
+      <img *ngIf="t.icon" class="boxImage" [src]="'./assets/icons/'+t?.icon" />
+      <b class="talkTitle">{{t?.title}}</b>
     </mat-panel-title>
     <mat-panel-description>
         {{t?.info}}
@@ -12,8 +13,12 @@
     <p [innerHtml]="t?.text"> </p>
 </mat-expansion-panel>
 </mat-accordion>
-
 <br />
+
+<div class="row"><img class="boxImage" src="./assets/icons/globe.svg" /><b class="talkTitle">Web Development</b></div>
+<div class="row"><img class="boxImage" src="./assets/icons/brain.svg" /><b class="talkTitle">Artificial Intelligence (AI)</b></div>
+<div class="row"><img class="boxImage" src="./assets/icons/flame.svg" /><b class="talkTitle">Mixed Topics</b></div>
+
 
 <h3>Demos</h3>
 <div *ngIf="!(isHandset$ | async)" class ="contentBox">
